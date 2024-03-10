@@ -1,0 +1,128 @@
+
+    ;mut ecx pe linia rotorului x
+    cmp ebx, 0
+    je rot_selected
+
+select_rot:
+    add ecx, 2 * LETTERS_COUNT
+    dec ebx
+    cmp ebx, 0
+    jne select_rot
+    
+rot_selected:
+
+;calculez rotirea efectiva care apare
+    push edx        ;salvez edx
+    xor edx, edx
+    mov ebx, LETTERS_COUNT
+    div ebx
+    mov eax, edx    ;calculez noua pozitia(relativ la restul modulo 26)
+    xor ebx, ebx
+    cmp eax, 0
+    je identic         ;rotirea aduce rotorul in aceeasi pozitie
+    mov esi, eax    ;pastrez eax calculat
+
+;selectez tipul de rotire
+    pop edx         ;restaurez edx
+    cmp edx, 1
+    je la_dreapta
+
+;salvez pe stiva primele x (eax) caractere de pe cele doua linii ale rotorului
+push_inceput:
+    mov bl, [ecx + eax - 1]
+    push ebx
+    mov bl, [ecx + LETTERS_COUNT + eax - 1]
+    push ebx
+    dec eax
+    cmp eax, 0
+    jne push_inceput
+
+    mov ebx, LETTERS_COUNT
+    mov eax, esi                                 ;readuc eax calculat
+    sub ebx, eax                            ;contor shiftare
+
+left_shift:
+    push ebx                                ;salvez ebx
+    mov bl, [ecx + eax]
+    mov [ecx], bl
+    mov bl, [ecx + LETTERS_COUNT + eax]
+    mov [ecx + LETTERS_COUNT], bl
+    pop ebx                                 ;restaurez ebx
+    inc ecx
+    dec ebx
+    cmp ebx, 0
+    jg left_shift
+
+;aduc la final vechile caractere de la inceput
+;ecx iese din loop-ul anterior cu pozitia de unde se incep pop ururile
+pop_sfarsit:
+    pop ebx
+    mov [ecx + LETTERS_COUNT], bl
+    pop ebx
+    mov [ecx], bl
+    dec eax
+    inc ecx
+    cmp eax, 0
+    jne pop_sfarsit
+
+    jmp done
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+la_dreapta:
+
+    ;salvez pe stiva ultimele x (eax) caractere de pe cele doua linii ale rotorului
+
+    add ecx, LETTERS_COUNT - 1
+    sub ecx, eax
+    add ecx, 1
+    xor ebx, ebx
+
+pushh2:
+    mov bl, [ecx]
+    push ebx
+    mov bl, [ecx + LETTERS_COUNT]
+    push ebx
+    dec eax
+    inc ecx
+    cmp eax, 0
+    jne pushh2
+
+dec ecx
+mov eax, esi  ;x
+mov ebx, -1
+mul ebx
+mov ebx, LETTERS_COUNT
+add ebx, eax
+
+;right shifting 
+right_shift:
+    push ebx
+    mov bl, [ecx + eax]
+    mov [ecx], bl
+    mov bl, [ecx + LETTERS_COUNT + eax]
+    mov [ecx + LETTERS_COUNT], bl
+    pop ebx
+    dec ecx
+    dec ebx
+    cmp ebx, 0
+    jg right_shift
+
+;mov saved char at the beginning
+popp2:
+    pop ebx
+    mov [ecx + LETTERS_COUNT], bl
+    pop ebx
+    mov [ecx], bl
+    inc eax
+    dec ecx
+    cmp eax, 0
+    jne popp2
+
+identic:
+    pop edx
+done:
+    ;; FREESTYLE ENDS HERE
+    ;; DO NOT MODIFY
+    popa
+    leave
+    ret
+    ;; DO NOT MODIFY

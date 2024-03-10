@@ -1,0 +1,23 @@
+28          
+SBOXHQMQPJKMCXUMIVXSNKGNYXOZ                          initial_keys= W I N     initial_notches = V Z E     de la 0 la 16 e bine
+WIN                                                   plain 0xffff5a29  ;     config 0xffff58c2   ;   notches 0xffff59c9  ;   keys 0xffff59c6  ;  enc 0xffff813a
+V N                                                   criptare: 
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z     ;rot 1
+B D F H J L C P R T X V Z N Y E I W G A K M U S Q O
+Z E
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z     ;rot 2
+V Z B R G I T Y U P S D N H L X A W M J Q O F E C K
+E R
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z     ;rot 3
+A J D K S I R U X B L H W T M C Q G Z N P Y F V O E
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z     ;reflector
+E J M Z A L Y X V B W F C R Q U O N T S P I K H G D
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z     ;plub
+R B C D E F K H I J G L M N X P Q A S T U V W O Y Z
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z     ;input
+
+
+

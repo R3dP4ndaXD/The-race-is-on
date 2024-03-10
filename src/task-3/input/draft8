@@ -1,0 +1,113 @@
+al 21 lea element
+plec cu B   sa verif ca rot 2 e shiftat corect, o singura data
+    ----ce imi da mie---
+M N O P Q R S T U V W X Y Z A B C D E F G H I J K L rot1
+O W Y H X U S P A I B R C J E K M F L G D Q V Z N T
+
+E F G H I J K L M N O P Q R S T U V W X Y Z A B C D rot2
+S I R U X B L H W T M C Q G Z N P Y F V O E A J D K
+
+X Y Z A B C D E F G H I J K L M N O P Q R S T U V W rot3
+S Q O B D F H J L C P R T X V Z N Y E I W G A K M U
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z reflector
+Y R U H Q S L D P X N G O K M I E B F Z C W V J A T
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z plugboard
+D B N A T L I H G V Z F M C O U Y R S E P J X W Q K
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+
+MNOPQRST
+UVWXYZAB
+CDEFGHIJ
+KLOWYHXU
+SPAIBRCJ
+EKMFLGDQ
+VZNTEFGH
+IJKLMNOP
+QRSTUVWX
+YZABCDSI
+RUXBLHWT
+MCQGZNPY
+FVOEAJDK
+XYZABCDE
+FGHIJKLM
+NOPQRSTU
+VWSQOBDF
+HJLCPRTX
+VZNYEIWG
+AKMUABCD
+EFGHIJKL
+MNOPQRST
+UVWXYZYR
+UHQSLDPX
+NGOKMIEB
+FZCWVJAT
+ABCDEFGH
+IJKLMNOP
+QRSTUVWX
+YZDBNATL
+IHGVZFMC
+OUYRSEPJ
+XWQK
+
+
+----testare---
+M N O P Q R S T U V W X Y Z A B C D E F G H I J K L rot1
+O W Y H X U S P A I B R C J E K M F L G D Q V Z N T
+
+E F G H I J K L M N O P Q R S T U V W X Y Z A B C D rot2
+S I R U X B L H W T M C Q G Z N P Y F V O E A J D K 
+
+X Y Z A B C D E F G H I J K L M N O P Q R S T U V W rot3
+S Q O B D F H J L C P R T X V Z N Y E I W G A K M U
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z reflector
+Y R U H Q S L D P X N G O K M I E B F Z C W V J A T
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z plugboard
+D B N A T L I H G V Z F M C O U Y R S E P J X W Q K
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+
+
+
+
+        -----testare double steppping---
+N O P Q R S T U V W X Y Z A B C D E F G H I J K L M rot1        notch:N F X      keys:Q E V    86 SEWLWNXSGUFHOSWKGMETBRYPXTHGBDZHLFSGBOJPPYZBWDTZNQSXNQNPSEUZHGIKDYDUXBJQYIXDCGODHUQRTF
+W Y H X U S P A I B R C J E K M F L G D Q V Z N T O 
+
+F G H I J K L M N O P Q R S T U V W X Y Z A B C D E  rot2
+I R U X B L H W T M C Q G Z N P Y F V O E A J D K S 
+
+X Y Z A B C D E F G H I J K L M N O P Q R S T U V W  rot3        facute A*19, A,     
+S Q O B D F H J L C P R T X V Z N Y E I W G A K M U 
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z reflector
+Y R U H Q S L D P X N G O K M I E B F Z C W V J A T
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z plugboard
+D B N A T L I H G V Z F M C O U Y R S E P J X W Q K
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+
+
+
+        -----intial---
+M N O P Q R S T U V W X Y Z A B C D E F G H I J K L rot1        notch:M D C       keys:Q E V 
+O W Y H X U S P A I B R C J E K M F L G D Q V Z N T 
+
+D E F G H I J K L M N O P Q R S T U V W X Y Z A B C  rot2
+K S I R U X B L H W T M C Q G Z N P Y F V O E A J D 
+
+C D E F G H I J K L M N O P Q R S T U V W X Y Z A B 
+F H J L C P R T X V Z N Y E I W G A K M U S Q O B D 
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z reflector
+Y R U H Q S L D P X N G O K M I E B F Z C W V J A T
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z plugboard
+D B N A T L I H G V Z F M C O U Y R S E P J X W Q K
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z

@@ -1,0 +1,174 @@
+criptare:
+    ;shiftare la stanga rotorul 3        Daca pozitia curenta INAINTE DE ROTIRE a rotorului este egala cu notch-ul acestuia, atunci vom roti si rotorul din stanga acestuia cu 1 pozitie (acest lucru se va realiza pentru toti rotorii mai putin primul).
+
+    push ebx        ;salved ebx
+    mov ebx, LETTERS_COUNT
+    dec ebx
+    xor eax, eax
+    mov al, [edx + 4 * LETTERS_COUNT]
+    push eax
+    mov al, [edx + 5 * LETTERS_COUNT]
+    push eax
+    push edx    ;salved edx
+shiftere_stanga:
+    mov al, [edx + 4 * LETTERS_COUNT + 1]
+    mov [edx + 4 * LETTERS_COUNT], al
+    mov al, [edx + 5 * LETTERS_COUNT + 1]
+    mov [edx + 5 * LETTERS_COUNT], al
+    inc edx
+    dec ebx
+    cmp ebx, 0
+    jg shiftere_stanga
+
+    pop edx         ;restaurez edx
+    ;aduc la inceput elementele de pe ultimele 2 pozitii salvate
+    pop eax
+    mov [edx + 6 * LETTERS_COUNT- 1], al
+    pop eax
+    mov [edx + 5 * LETTERS_COUNT - 1], al
+    
+    pop ebx         ;restaurez ebx
+
+    ;incrementez keys[2]
+    mov al, [ebx + 2]
+    inc al
+    cmp al, 90
+    jle fara_modul
+    sub al, 90
+fara_modul:
+    mov [ebx + 2], al 
+    push ecx        ;salvez ecx
+    push ebx        ;salvez ebx
+
+    ;criptare propriuzisa
+    xor eax, eax
+    mov al, [esi]
+    sub al, 65        ;aflu pe ce poz e in linia 9 (65 = 'A')
+    mov al, [edx + 9 * LETTERS_COUNT + eax]
+
+    ;il caut pe al pe lin 8
+    xor ebx, ebx
+caut_in_lin8:
+    mov cl, [edx + 8 * LETTERS_COUNT + ebx]
+    inc ebx
+    cmp cl, al          ;fiecare lin e o permutare a literelor din alfabet, deci trebuie sa existe
+    jne caut_in_lin8
+    sub ebx, 1
+    ;sub ebx, 66         ;aflu pe ce poz e in linia 8
+
+    ;aflu elem corespunzator pe lin 5
+    mov al, [edx + 5 * LETTERS_COUNT + ebx]
+
+    ;il caut pe al pe lin 4
+    xor ebx, ebx
+caut_in_lin4:
+    mov cl, [edx + 4 * LETTERS_COUNT + ebx]
+    inc ebx
+    cmp cl, al          
+    jne caut_in_lin4
+    sub ebx, 1
+    ;sub ebx, 66         ;aflu pe ce poz e in linia 4
+
+;aflu elem corespunzator pe lin 3
+    mov al, [edx + 3 * LETTERS_COUNT + ebx]
+
+    ;il caut pe al pe lin 2
+    xor ebx, ebx
+caut_in_lin2:
+    mov cl, [edx + 2 * LETTERS_COUNT + ebx]
+    inc ebx
+    cmp cl, al          
+    jne caut_in_lin2
+    sub ebx, 1
+    ;sub ebx, 66         ;aflu pe ce poz e in linia 2
+
+;aflu elem corespunzator pe lin 1
+    mov al, [edx + 1 * LETTERS_COUNT + ebx]
+
+    ;il caut pe al pe lin 0
+    xor ebx, ebx
+caut_in_lin0:
+    mov cl, [edx + ebx]
+    inc ebx
+    cmp cl, al          
+    jne caut_in_lin0
+    sub ebx, 1
+    ;sub ebx, 66         ;aflu pe ce poz e in linia 0
+
+;;;;;;;;;;;;;am ajuns la reflector;;;;;;;;;;;
+
+    ;aflu elem corespunzator pe lin 7
+    mov al, [edx + 7 * LETTERS_COUNT + ebx]
+
+    ;il caut pe al pe lin 6
+    xor ebx, ebx
+caut_in_lin6:
+    mov cl, [edx + 6 * LETTERS_COUNT + ebx]
+    inc ebx
+    cmp cl, al
+    jne caut_in_lin6
+    sub ebx, 1
+    ;sub ebx, 66         ;aflu pe ce poz e in linia 6
+
+    ;aflu elem corespunzator pe lin 0
+    mov al, [edx + ebx]
+
+    ;il caut pe al pe lin 1
+    xor ebx, ebx
+caut_in_lin1:
+    mov cl, [edx + LETTERS_COUNT + ebx]
+    inc ebx
+    cmp cl, al          
+    jne caut_in_lin1
+    sub ebx, 1
+    ;sub ebx, 66         ;aflu pe ce poz e in linia 1
+
+    ;aflu elem corespunzator pe lin 2
+    mov al, [edx + 2 * LETTERS_COUNT + ebx]
+
+    ;il caut pe al pe lin 3
+    xor ebx, ebx
+caut_in_lin3:
+    mov cl, [edx + 3 * LETTERS_COUNT + ebx]
+    inc ebx
+    cmp cl, al          
+    jne caut_in_lin3
+    sub ebx, 1
+    ;sub ebx, 66         ;aflu pe ce poz e in linia 3
+
+    ;aflu elem corespunzator pe lin 4
+    mov al, [edx + 4 * LETTERS_COUNT + ebx]
+
+    ;il caut pe al pe lin 5
+    xor ebx, ebx
+caut_in_lin5:
+    mov cl, [edx + 5 * LETTERS_COUNT + ebx]
+    inc ebx
+    cmp cl, al          
+    jne caut_in_lin5
+    sub ebx, 1
+    ;sub ebx, 66         ;aflu pe ce poz e in linia 5
+
+    ;aflu elem corespunzator pe lin 8
+    mov al, [edx + 8 * LETTERS_COUNT + ebx]
+
+    ;il caut pe al pe lin 9
+    xor ebx, ebx
+caut_in_lin9:
+    mov cl, [edx + 9 * LETTERS_COUNT + ebx]
+    inc ebx
+    cmp cl, al          
+    jne caut_in_lin9
+    sub ebx, 1
+    ;sub ebx, 66         ;aflu pe ce poz e in linia 9
+
+coficare_finalizata:
+    add bl, 65
+    mov [edi], bl
+    inc edi
+    inc esi
+    pop ebx     ;restaurez ebx
+    pop ecx     ;restaurez ecx
+    mov al, [esi]
+    cmp al, 0
+    jne criptare

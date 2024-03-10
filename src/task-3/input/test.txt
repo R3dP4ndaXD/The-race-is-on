@@ -1,0 +1,185 @@
+
+6                                                           initial 0xffff59f9  ;   config[][] 0xffff5892   ;  keys[] 0xffff5996    ;  notches[]  0xffff5999  ; encripted 0xffff810a  
+ENIGMA
+DOG                                                         initial_keys= D O L     initial_notches= Q E V              incripted: K S P L D F
+Q A
+D E F G H I J K L M N O P Q R S T U V W X Y Z A B C         rot1  - left
+F L G D Q V Z N T O W Y H X U S P A I B R C J E K M
+E A
+O P Q R S T U V W X Y Z A B C D E F G H I J K L M N         rot2- middle
+M C Q G Z N P Y F V O E A J D K S I R U X B L H W T
+V A
+M N O P Q R S T U V W X Y Z A B C D E F G H I J K L        rot3 - right
+Z N Y E I W G A K M U S Q O B D F H J L C P R T X V
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z         ; reflector
+Y R U H Q S L D P X N G O K M I E B F Z C W V J A T
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z         ; plugboard
+R B C D E F K H I J G L M N X P Q A S T U V W O Y Z
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+
+
+6
+ENIGMA
+DOG                                                         initial_keys= D O K     initial_notches= Q E V              incripted: K S P L D
+Q A
+D E F G H I J K L M N O P Q R S T U V W X Y Z A B C         rot1  - left
+F L G D Q V Z N T O W Y H X U S P A I B R C J E K M
+E A
+O P Q R S T U V W X Y Z A B C D E F G H I J K L M N         rot2- middle
+M C Q G Z N P Y F V O E A J D K S I R U X B L H W T
+V A
+L M N O P Q R S T U V W X Y Z A B C D E F G H I J K         rot3 - right
+V Z N Y E I W G A K M U S Q O B D F H J L C P R T X
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z         ; reflector
+Y R U H Q S L D P X N G O K M I E B F Z C W V J A T
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z         ; plugboard
+R B C D E F K H I J G L M N X P Q A S T U V W O Y Z
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+
+6
+ENIGMA
+DOG                                                         initial_keys= D O K     initial_notches= Q E V              incripted: K S P L
+Q A
+D E F G H I J K L M N O P Q R S T U V W X Y Z A B C         rot1  - left
+F L G D Q V Z N T O W Y H X U S P A I B R C J E K M
+E A
+O P Q R S T U V W X Y Z A B C D E F G H I J K L M N         rot2- middle
+M C Q G Z N P Y F V O E A J D K S I R U X B L H W T
+V A
+K L M N O P Q R S T U V W X Y Z A B C D E F G H I J    rot3 - right
+X V Z N Y E I W G A K M U S Q O B D F H J L C P R T
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z         ; reflector
+Y R U H Q S L D P X N G O K M I E B F Z C W V J A T
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z         ; plugboard
+R B C D E F K H I J G L M N X P Q A S T U V W O Y Z
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+
+
+
+
+
+6
+ENIGMA
+DOG                                                         initial_keys= D O J     initial_notches= Q E V              incripted: K S P
+Q A
+D E F G H I J K L M N O P Q R S T U V W X Y Z A B C         rot1  - left
+F L G D Q V Z N T O W Y H X U S P A I B R C J E K M
+E A
+O P Q R S T U V W X Y Z A B C D E F G H I J K L M N         rot2- middle
+M C Q G Z N P Y F V O E A J D K S I R U X B L H W T
+V A
+J K L M N O P Q R S T U V W X Y Z A B C D E F G H I     rot3 - right
+T X V Z N Y E I W G A K M U S Q O B D F H J L C P R
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z         ; reflector
+Y R U H Q S L D P X N G O K M I E B F Z C W V J A T
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z         ; plugboard
+R B C D E F K H I J G L M N X P Q A S T U V W O Y Z
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+
+6
+ENIGMA
+DOG                                                         initial_keys= D O I     initial_notches= Q E V              incripted: K S
+Q A
+D E F G H I J K L M N O P Q R S T U V W X Y Z A B C         rot1  - left
+F L G D Q V Z N T O W Y H X U S P A I B R C J E K M
+E A
+O P Q R S T U V W X Y Z A B C D E F G H I J K L M N         rot2- middle
+M C Q G Z N P Y F V O E A J D K S I R U X B L H W T
+V A
+I J K L M N O P Q R S T U V W X Y Z A B C D E F G H      rot3 - right
+R T X V Z N Y E I W G A K M U S Q O B D F H J L C P
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z         ; reflector
+Y R U H Q S L D P X N G O K M I E B F Z C W V J A T
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z         ; plugboard
+R B C D E F K H I J G L M N X P Q A S T U V W O Y Z
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+
+
+
+
+
+
+
+
+6
+ENIGMA
+DOG                                                         initial_keys= D O H     initial_notches= Q E V              incripted: K
+Q A
+D E F G H I J K L M N O P Q R S T U V W X Y Z A B C         rot1  - left
+F L G D Q V Z N T O W Y H X U S P A I B R C J E K M
+E A
+O P Q R S T U V W X Y Z A B C D E F G H I J K L M N         rot2- middle
+M C Q G Z N P Y F V O E A J D K S I R U X B L H W T
+V A
+H I J K L M N O P Q R S T U V W X Y Z A B C D E F G        rot3 - right
+P R T X V Z N Y E I W G A K M U S Q O B D F H J L C
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z         ; reflector
+Y R U H Q S L D P X N G O K M I E B F Z C W V J A T
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z         ; plugboard
+R B C D E F K H I J G L M N X P Q A S T U V W O Y Z
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+
+
+
+
+6
+ENIGMA
+DOG                                                         initial_keys= D O G     initial_notches= Q E V
+Q A
+D E F G H I J K L M N O P Q R S T U V W X Y Z A B C         rot1  - left
+F L G D Q V Z N T O W Y H X U S P A I B R C J E K M
+E A
+O P Q R S T U V W X Y Z A B C D E F G H I J K L M N         rot2- middle
+M C Q G Z N P Y F V O E A J D K S I R U X B L H W T
+V A
+G H I J K L M N O P Q R S T U V W X Y Z A B C D E F         rot3 - right
+C P R T X V Z N Y E I W G A K M U S Q O B D F H J L 
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z         ; reflector
+Y R U H Q S L D P X N G O K M I E B F Z C W V J A T
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z         ; plugboard
+R B C D E F K H I J G L M N X P Q A S T U V W O Y Z
+
+
+
+
+
+
+
+
+
+6
+ENIGMA
+DOG
+Q A
+D E F G H I J K L M N O P Q R S T U V W X Y Z A B C 
+F L G D Q V Z N T O W Y H X U S P A I B R C J E K M
+E B
+O P Q R S T U V W X Y Z A B C D E F G H I J K L M N 
+M C Q G Z N P Y F V O E A J D K S I R U X B L H W T
+V C
+G H I J K L M N O P Q R S T U V W X Y Z A B C D E F 
+C P R T X V Z N Y E I W G A K M U S Q O B D F H J L
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+Y R U H Q S L D P X N G O K M I E B F Z C W V J A T
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+R B C D E F K H I J G L M N X P Q A S T U V W O Y Z

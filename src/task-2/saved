@@ -1,0 +1,155 @@
+
+
+
+mov ecx, 0      ; i
+mov edx, 0      ; j
+mov esi, [ebp + 8]
+
+for1:
+mov edx, 0
+for2:
+mov bl, byte[esi + edx  + 2]
+cmp bl, [esi + edx + proc_size + 2]
+jl end_for2
+jne swap
+
+mov bx, word[esi + edx  + 3]
+cmp bx, [esi + edx + proc_size + 3]
+jl end_for2
+jne swap
+
+mov bx, word[esi + edx]
+cmp bx, [esi + edx + proc_size]
+jl end_for2
+
+swap:
+mov bl, byte[esi + edx  + 2]    
+xchg [esi + edx + proc_size + 2], bl
+mov [esi + edx + 2], bl
+
+mov bx, [esi + edx]
+xchg [esi + edx + proc_size], bx
+mov [esi + edx], bx
+
+mov bl, [esi + edx + 3]
+xchg [esi + edx + proc_size + 3], bl
+mov [esi + edx + 3], bl
+jmp end_for2
+
+end_for2:
+add edx, proc_size
+push eax
+push edx
+mov eax, [ebp + 12]
+sub eax , 1
+sub eax, ecx
+mov ebx, proc_size
+mul ebx
+mov ebx, eax
+pop edx
+pop eax
+cmp edx, ebx
+jge prep_for1
+jmp for2
+
+prep_for1:
+add ecx, 1
+mov ebx, [ebp + 12]
+sub ebx, 1
+cmp ecx, ebx
+jl for1
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;
+
+for1:
+    add ecx, 2
+    cmp ecx, [ebp + 12]
+    jge end_sort
+    dec ecx
+    mov esi, [ebp + 8]
+for2:
+    mov bl, byte[esi + 2]
+    cmp bl, [esi + proc_size + 2]
+    jle end_for2
+
+    xchg [esi + proc_size + 2], bl
+    mov [esi + 2], bl
+
+    mov bx, [esi]
+    xchg [esi + proc_size], bx
+
+    mov bl, [esi + 3]
+    xchg [esi + proc_size + 3], bl
+    jmp end_for2
+
+    ;mov edx, [esi + proc_size + 2]
+    ;xchg ebx, edx
+    ;mov [esi + 2], edx
+    ;mov [esi + proc_size + 2], ebx
+
+end_for2:
+    add esi, proc_size
+    mov edi, [ebp + 8]
+    add edi, [ebp + 12]
+    sub edi, 1
+    sub edi, ecx
+    cmp esi, edi
+    jge for1
+    jmp for2
+
+end_sort:
+
+
+
+
+
+
+mov ecx, 0      ; i
+mov edx, 0      ; j
+mov esi, [ebp + 8]
+
+for1:
+mov edx, 0
+for2:
+mov bl, byte[esi + edx  + 2]
+cmp bl, [esi + edx + proc_size + 2]
+jle end_for2
+
+xchg [esi + edx + proc_size + 2], bl
+mov [esi + edx + 2], bl
+
+mov bx, [esi + edx]
+xchg [esi + edx + proc_size], bx
+mov [esi + edx], bx
+
+mov bl, [esi + edx + 3]
+xchg [esi + edx + proc_size + 3], bl
+mov [esi + edx + 3], bl
+jmp end_for2
+
+end_for2:
+add edx, proc_size
+push eax
+push edx
+mov eax, [ebp + 12]
+sub eax , 1
+sub eax, ecx
+mov ebx, proc_size
+mul ebx
+mov ebx, eax
+pop edx
+pop eax
+cmp edx, ebx
+jge prep_for1
+jmp for2
+
+prep_for1:
+add ecx, 1
+mov ebx, [ebp + 12]
+sub ebx, 1
+cmp ecx, ebx
+jl for1
